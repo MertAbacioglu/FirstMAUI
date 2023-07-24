@@ -6,17 +6,17 @@
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
-		<RootNamespace>FirstMAUI</RootNamespace>
+		<RootNamespace>DrawingMAUI</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>FirstMAUI</ApplicationTitle>
+		<ApplicationTitle>DrawingMAUI</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.firstmaui</ApplicationId>
-		<ApplicationIdGuid>e9c13a71-bf0c-4f00-aadc-a4b32ec600c6</ApplicationIdGuid>
+		<ApplicationId>com.companyname.drawingmaui</ApplicationId>
+		<ApplicationIdGuid>2b570cd9-7b0d-4ba8-b4c6-09ed1e388280</ApplicationIdGuid>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -49,16 +49,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Platforms\Android\Resources\values\DOG.jpg" />
-	  <None Remove="Resources\Images\slayer.png" />
-	  <None Remove="Resources\Raw\hardRock.mp3" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="Plugin.Maui.Audio" Version="1.0.0" />
 	</ItemGroup>
 
 </Project>

@@ -1,24 +1,26 @@
-﻿namespace FirstMAUI;
+﻿using FirstMAUI.ViewModel;
+using Plugin.Maui.Audio;
+
+namespace FirstMAUI;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    private readonly IAudioManager _audioManager;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage(MainViewModel mvm, IAudioManager audioManager)
+    {
+        InitializeComponent();
+        BindingContext = mvm;
+        _audioManager = audioManager;
+    }
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+    private async void myDrawing_DrawingLineCompleted(object sender, CommunityToolkit.Maui.Core.DrawingLineCompletedEventArgs e)
+    {
+        Stream stream = await myDrawing.GetImageStream(150, 150);
+        newBandLogo.Source = ImageSource.FromStream(() => stream);
+    }
 
-		//if (count == 1)
-		//	CounterBtn.Text = $"Clicked {count} time";
-		//else
-		//	CounterBtn.Text = $"Clicked {count} times";
 
-		//SemanticScreenReader.Announce(CounterBtn.Text);
-	}
 }
 
+  
